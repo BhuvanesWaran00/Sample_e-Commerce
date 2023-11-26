@@ -1,0 +1,41 @@
+    
+{% extends "base.html" %}
+
+{% block main %}
+
+<section id="products" class="">
+      <div class="row">
+      	<!--  ##LaptopModelLaptopModel(model_id, model, brand, cpu_specs, display_size, resolution, operating_system, gpu_specs, launch_date, thumbnail, price) -->
+      	{%for m in models%} 
+  					<div class="col-md-4">
+						  <div class="thumbnail">
+						    <img src= {{m[9]}} >
+						    <div class="caption">
+						      <h4 class="pull-right">${{m[10]}}0</h4>
+						      <h4><a href="/product/{{m[0]}}">{{m[1]}}</a></h4>
+						      <p>CPU: {{m[3]}} <br> Display: {{m[4]}}", {{m[5]}} <br> Operating System: {{m[6]}} <br> GPU: {{m[7]}} <br> Launch Date: {{m[8]}}</p>
+						      <input type="button" onclick="addItem('{{m[0]}}', '{{m[10]}}');" value="Add to Cart" class="btn btn-default" />
+						    </div> <!-- caption -->
+						  </div> <!-- thumbnail -->
+						</div> <!-- col-md-4 -->
+				{%endfor%} 
+				
+      </div> <!-- row -->
+    </section>
+    <script>
+            function addItem(m, p) {
+				  var q = prompt("Please enter how much of this laptop model you want:", "");
+				  if (q == null || q == "") {
+				    alert("No quantity entered!")
+				  } else {
+				    $.post( "/add/" + m + "/"+q + "/"+p, function() {
+						  alert( "Proccessing" );
+						}).done(function() {
+						    alert( "Laptop Successfully added!" );
+						  })
+				  }
+					
+            }
+      </script>
+{% endblock %}
+    
