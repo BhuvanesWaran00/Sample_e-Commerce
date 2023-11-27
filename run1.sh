@@ -10,4 +10,6 @@ pip install gunicorn
 pip install Flask
 pip install -r req.txt
 cp service.txt /etc/systemd/system/app.service
+chmod 100 run2.sh
+chmod 100 run3.sh
 gunicorn -b 0.0.0.0:8800 app:app
