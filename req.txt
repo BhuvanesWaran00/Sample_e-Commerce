@@ -19,7 +19,3 @@ flask_bcrypt
 # ----------------------
 gunicorn
 email_validator
-<<<<<<< HEAD
-
-=======
->>>>>>> f23a24acb38c097f96b2c0774005efe58c6160ed
