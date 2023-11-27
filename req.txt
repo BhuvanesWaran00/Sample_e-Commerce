@@ -7,7 +7,7 @@ Flask-SQLAlchemy
 Flask-Migrate
 Flask-Script
 Flask-Login
-
+PyMySQL
 faker
 mysql-connector
 werkzeug
@@ -20,5 +20,3 @@ flask_bcrypt
 gunicorn
 email_validator
 
-
-flask_mysqldb
