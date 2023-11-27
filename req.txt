@@ -19,6 +19,3 @@ flask_bcrypt
 # ----------------------
 gunicorn
 email_validator
-
-
-flask_mysqldb
