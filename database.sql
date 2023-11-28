@@ -26,8 +26,3 @@ create table LaptopModel(
 	primary key(model_id) 
 );
 
-
-
-0 row(s) affected, 2 warning(s): 
-1681 Specifying number of digits for floating point data types is deprecated and will be removed in a future release. 
-1681 Specifying number of digits for floating point data types is deprecated and will be removed in a future release.
