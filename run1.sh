@@ -1,6 +1,6 @@
 #!/bin/bash
 apt-get update -y
-apt-get install pip python3-venv -y
+apt-get install pip python3-venv  mysql-server -y
 git clone https://github.com/BhuvanesWaran00/Sample_e-Commerce.git
 mv Sample_e-Commerce app
 cd app
