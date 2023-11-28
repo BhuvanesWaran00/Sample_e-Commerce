@@ -10,7 +10,7 @@ import os
 if __name__ == '__main__':
 
     compuStoreConnection = mysql.connector.connect(
-        host="app.c19gkk3ng7md.ap-south-1.rds.amazonaws.com",
+        host=os.environ.get("DB_HOST"),
         user= os.environ.get('MYSQL_USER'),
         password="Bh101299",
         database="userdata"

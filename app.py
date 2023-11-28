@@ -19,8 +19,8 @@ from mysql.connector import errorcode
 
 
 compuStoreConnection = mysql.connector.connect(
-    host="app.c19gkk3ng7md.ap-south-1.rds.amazonaws.com", 
-    user=os.environ.get('MYSQL_USER'), 
+    host=os.environ.get("DB_HOST"), 
+    user="root", 
     password="Bh101299", 
     database="userdata"
 )
