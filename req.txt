@@ -19,3 +19,5 @@ flask_bcrypt
 # ----------------------
 gunicorn
 email_validator
+requests
+python-dotenv

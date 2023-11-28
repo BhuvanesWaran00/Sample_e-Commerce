@@ -3,6 +3,7 @@ from forms import SignupForm, LoginForm
 from random import sample
 from werkzeug.security import check_password_hash,generate_password_hash
 import logging
+from dotenv import load_dotenv
 
 
 import os
@@ -17,7 +18,12 @@ from mysql.connector import Error
 from mysql.connector import errorcode
 
 
-compuStoreConnection = mysql.connector.connect(host="app.c19gkk3ng7md.ap-south-1.rds.amazonaws.com", user="root", password="Bh101299", database="userdata")
+compuStoreConnection = mysql.connector.connect(
+    host="app.c19gkk3ng7md.ap-south-1.rds.amazonaws.com", 
+    user=os.environ.get('MYSQL_USER'), 
+    password="Bh101299", 
+    database="userdata"
+)
 compuStoreCursor = compuStoreConnection.cursor(prepared=True)
 
 @app.route("/")
