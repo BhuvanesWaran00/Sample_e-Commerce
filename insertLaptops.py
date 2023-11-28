@@ -5,13 +5,12 @@ import mysql.connector
 from mysql.connector import Error
 from mysql.connector import errorcode
 from dotenv import load_dotenv
-import os
     
 if __name__ == '__main__':
 
     compuStoreConnection = mysql.connector.connect(
-        host=os.environ.get("DB_HOST"),
-        user= os.environ.get('MYSQL_USER'),
+        host="eks.c19gkk3ng7md.ap-south-1.rds.amazonaws.com",
+        user="root",
         password="Bh101299",
         database="userdata"
     )
