@@ -7,7 +7,7 @@
 	</div> <!-- col-md-4 -->
 	<div class="col-md-8 col-sm-12">
 	    
-	   <!-- 
+
 	    {% if session['account_id']  %}
           <li class="nav-item active">
             <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
@@ -15,7 +15,7 @@
       {% else %}
 	        <div class="form-inline" class="login-form center-block">
 	        	{% include 'flash_messages.html' %}
-          -->
+  
 			    <form action="{{ url_for('login') }}" method="post">
 			      {{ form.csrf_token }}
             <!--

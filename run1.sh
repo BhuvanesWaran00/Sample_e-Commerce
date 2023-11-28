@@ -13,4 +13,6 @@ cp service.txt /etc/systemd/system/app.service
 chmod 100 run1.sh
 chmod 100 run2.sh
 chmod 100 run3.sh
-gunicorn -b 0.0.0.0:8800 app:app
+./run2.sh
+./run3.sh
+gunicorn -b 0.0.0.0:8000 app:app

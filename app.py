@@ -144,4 +144,3 @@ def context_processor():
 
 if __name__ == '__main__':
     app.run()
-    app.debug(True)
