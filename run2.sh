@@ -1,4 +1,4 @@
 #!/bin/bash
-systemctl daemon-reload
-systemctl start app
-systemctl enable app
+sudo systemctl daemon-reload
+sudo systemctl start app
+sudo systemctl enable app

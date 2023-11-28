@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 if __name__ == '__main__':
 
     compuStoreConnection = mysql.connector.connect(
-        host="eks.c19gkk3ng7md.ap-south-1.rds.amazonaws.com",
+        host="prod.c19gkk3ng7md.ap-south-1.rds.amazonaws.com",
         user="root",
         password="Bh101299",
         database="userdata"

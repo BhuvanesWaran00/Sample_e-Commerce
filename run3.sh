@@ -1,6 +1,6 @@
 #!/bin/bash
-apt-get install nginx -y
-systemctl start nginx
-systemctl enable nginx
-cp nginx.txt /etc/nginx/sites-available/default
-systemctl restart nginx
+sudo apt-get install nginx -y
+sudo systemctl start nginx
+sudo systemctl enable nginx
+sudo cp nginx.txt /etc/nginx/sites-available/default
+sudo systemctl restart nginx
