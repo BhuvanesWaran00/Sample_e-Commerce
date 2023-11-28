@@ -15,10 +15,9 @@ if __name__ == '__main__':
         database="userdata"
     )
     compuStoreCursor = compuStoreConnection.cursor(prepared=True)
-    
-    ##LaptopModelLaptopModel(model_id, model, brand, cpu_specs, display_size, resolution, operating_system, gpu_specs, launch_date, thumbnail, price)
+        ##LaptopModelLaptopModel(model_id, model, brand, cpu_specs, display_size, resolution, operating_system, gpu_specs, launch_date, thumbnail, price)
     compustoreInsertLaptop = "INSERT INTO LaptopModel VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
-   
+    
     pID = set()
     mID = set()
     
@@ -56,17 +55,23 @@ if __name__ == '__main__':
         compuStoreLaptopValues = (model_id, model, brand, cpu, displaySize, resolution, os, gpu, launchDate, thumbnail, price)
         
         compuStoreCursor.execute(compustoreInsertLaptop, compuStoreLaptopValues)
+        
+        
+        ##ModelStockInfo(model_id, amt_in_stock)
+        amt_in_stock = random.randint(250,280)
+ 
+        
+        for _ in range(amt_in_stock):
+            
+            ##Branch1 item
+            product_id1 = random.randint(1,2147483647)
+            while product_id1 in pID:
+                product_id1 = random.randint(1,2147483647)
+            pID.add(product_id1)
+
+    
+        k+=1
         compuStoreConnection.commit()
+
         print ("Laptop Items added")
         print("Got model info ... %s." % k)
-
-    #closing database connection.
-    if(compuStoreConnection.is_connected()):
-        compuStoreCursor.close()
-        compuStoreConnection.close()
-        print("MySQL compuStoreConnection is closed and %s laptop model added." %k) 
-                
-    #/* WriteReview(account_id, model_id, rev_text, date_written) */
-    # conn = sqlController.databaseGenerator("CompuStore", sqlController.columns)
-    # conn.addRecord([session["account_id"],  ], "WriteReview")
-    #db.addRecord(["\"1234\"", "\"hviujk\"", "\"gdfku\"","\"hjfgf\""], "test")
