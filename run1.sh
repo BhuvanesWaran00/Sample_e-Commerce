@@ -15,4 +15,4 @@ sudo chmod 100 run2.sh
 sudo chmod 100 run3.sh
 sudo ./run2.sh
 sudo ./run3.sh
-sudo gunicorn -b 0.0.0.0:8000 app:app
+sudo gunicorn -b 0.0.0.0:8080 app:app
