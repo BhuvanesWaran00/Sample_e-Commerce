@@ -1,11 +1,14 @@
 #!/bin/bash
 python3 -m venv venv
 source venv/bin/activate
-pip install -r req.txt
+pip install -r requirements.txt
 cp service.txt /etc/systemd/system/app.service
-chmod 100 run1.sh
-chmod 100 run2.sh
-chmod 100 run3.sh
-./run2.sh
-./run3.sh
+systemctl daemon-reload
+systemctl start app
+systemctl enable app
+apt-get install nginx -y
+systemctl start nginx
+systemctl enable nginx
+cp nginx.txt /etc/nginx/sites-available/default
+systemctl restart nginx
 gunicorn -b 0.0.0.0:80 app:app
