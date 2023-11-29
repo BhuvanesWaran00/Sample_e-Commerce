@@ -8,3 +8,7 @@ RUN apt-get update && \
 WORKDIR /app
 
 COPY . /app/
+
+RUN chmod +x run1.sh
+
+CMD [ "./run1.sh" ]
