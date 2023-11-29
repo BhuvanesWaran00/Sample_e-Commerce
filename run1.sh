@@ -13,4 +13,4 @@ chmod 100 run2.sh
 chmod 100 run3.sh
 ./run2.sh
 ./run3.sh
-gunicorn -b 0.0.0.0:9000 app:app
+gunicorn -b 0.0.0.0:80 app:app
