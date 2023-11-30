@@ -19,7 +19,7 @@ from mysql.connector import errorcode
 
 
 compuStoreConnection = mysql.connector.connect(
-    host="prod.c19gkk3ng7md.ap-south-1.rds.amazonaws.com", 
+    host="test.c19gkk3ng7md.ap-south-1.rds.amazonaws.com", 
     user="root", 
     password="Bh101299", 
     database="userdata"

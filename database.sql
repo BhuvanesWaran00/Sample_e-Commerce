@@ -11,18 +11,19 @@ create table CustomerAccount(
 );
 
 /* LaptopModel(model_id, model, brand, cpu_specs, display_size, resolution, operating_system, gpu_specs, launch_date, thumbnail, price) */
-create table LaptopModel(
-	model_id varchar(100) not null,
-	model text not null,
-	brand varchar(100) not null,
-	cpu_specs text, 
-	display_size double(5,2), 
-	resolution varchar(100),
-	operating_system text,
-	gpu_specs text,
-	launch_date date,
-	thumbnail text,
-	price double(10,2) not null,
-	primary key(model_id) 
+CREATE TABLE LaptopModel (
+    model_id VARCHAR(100) NOT NULL,
+    model TEXT NOT NULL,
+    brand VARCHAR(100) NOT NULL,
+    cpu_specs TEXT,
+    display_size DOUBLE,
+    resolution VARCHAR(100),
+    operating_system TEXT,
+    gpu_specs TEXT,
+    launch_date DATE,
+    thumbnail TEXT,
+    price DOUBLE NOT NULL,
+    PRIMARY KEY (model_id)
 );
+
 
