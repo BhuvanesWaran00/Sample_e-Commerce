@@ -19,20 +19,10 @@ from mysql.connector import errorcode
 
 
 compuStoreConnection = mysql.connector.connect(
-    """
-    # For Windows
-    host=os.getenv('DB_HOST'), 
-    user=os.getenv('DB_USER'), 
-    password=os.getenv('DB_PASSWORD'), 
-    database=os.getenv('DB_NAME')
-    """
-        """
-    # For Linux
     host=os.environ('DB_HOST'), 
     user=os.environ('DB_USER'), 
     password=os.environ('DB_PASSWORD'), 
     database=os.environ('DB_NAME')
-    """
 
 )
 compuStoreCursor = compuStoreConnection.cursor(prepared=True)
