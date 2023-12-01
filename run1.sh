@@ -18,4 +18,4 @@ systemctl start nginx
 systemctl enable nginx
 cp nginx.txt /etc/nginx/sites-available/default
 systemctl restart nginx
-gunicorn -b 0.0.0.0:9000 app:app
+gunicorn -b 0.0.0.0:8000 app:app
