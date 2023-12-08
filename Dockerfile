@@ -10,9 +10,11 @@ COPY requirements.txt .
 # Install the Python dependencies from requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the shell script and make it executable
-COPY DB_Config.sh .
-RUN chmod +x DB_Config.sh
+# Set environment variables
+ENV DB_HOST='test.c19gkk3ng7md.ap-south-1.rds.amazonaws.com' \
+    DB_USER='root' \
+    DB_PASSWORD='Bh101299' \
+    DB_NAME='userdata'
 
 # Copy the rest of the application code
 COPY . .
@@ -21,4 +23,4 @@ COPY . .
 EXPOSE 8000
 
 # Command to run your shell script and then start your Python application
-CMD ["sh", "./DB_Config.sh && python app.py"]
+CMD ["python", "app.py"]
