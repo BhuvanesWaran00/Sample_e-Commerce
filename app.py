@@ -30,6 +30,8 @@ def index():
         return render_template("index.html", models=sample(models, 9), form=form)
     except mysql.connector.Error as err:
         print(f"Error: {err}")
+        return render_template("error.html")  # Add this line
+
 
 
 
@@ -97,26 +99,21 @@ def registration():
 def login():
     form = LoginForm()
     if request.method == "POST":
-        print("work1")
         if form.validate_on_submit():
-            print("work2")
             email = form.email.data
             password = form.password.data 
-            print(email,password)
-    
             compuStoreCursor.execute("SELECT account_id, password FROM CustomerAccount where email like '{}' LIMIT 1".format(email))
             user = compuStoreCursor.fetchone()
-            
-            # Fetch the result before executing another query
             compuStoreConnection.commit()
-
-            print(user)
             if user and check_password_hash(user[1], password):
-                print("work3")
                 session["account_id"] = user[0]
                 flash('You have logged in successfully.', 'success')
                 return redirect(url_for("index"))
-    return redirect(url_for("index"))  # Redirect to a secure-page route instead
+            else:
+                flash('Invalid email or password.', 'danger')
+
+    # If form validation fails, render the login form again
+    return render_template("login.html", form=form)
 
          
 @app.route("/logout")
